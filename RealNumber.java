@@ -9,4 +9,12 @@ public class RealNumber{
   public String toString(){
     return ""+value;
   }
+  public boolean equals(RealNumber other){
+    double value1=getValue();
+    double value2=other.getValue();
+    if (value1/value2<=0.00001){
+      return true;
+    }
+    return false;
+  }
 }
