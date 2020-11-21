@@ -79,4 +79,11 @@ public class RationalNumber extends RealNumber {
     RationalNumber sum=new RationalNumber(newnum,newdeno);
     return sum;
   }
+
+  public RationalNumber subtract(RationalNumber other){
+    int newnum=numerator*other.getDenominator()-other.getNumerator()*denominator;
+    int newdeno=denominator*other.getDenominator();
+    RationalNumber diff=new RationalNumber(newnum,newdeno);
+    return diff;
+  }
 }
