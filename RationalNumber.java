@@ -56,7 +56,7 @@ public class RationalNumber extends RealNumber {
 
   private void reduce(){
     int gcd=gcd(getNumerator(),getDenominator());
-    denominator=getNumerator()/gcd;
+    numerator=getNumerator()/gcd;
     denominator=getDenominator()/gcd;
   }
 
@@ -66,5 +66,10 @@ public class RationalNumber extends RealNumber {
     RationalNumber prod=new RationalNumber(newnum,newdeno);
     prod.reduce();
     return prod;
+  }
+
+  public RationalNumber divide(RationalNumber other){
+    other=other.reciprocal();
+    return multiply(other);
   }
 }
