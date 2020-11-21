@@ -31,6 +31,8 @@ public class RationalNumber extends RealNumber {
   }
 
   public boolean equals(RationalNumber other){
+    reduce();
+    other.reduce();
     return (getDenominator()==other.getDenominator()&&getNumerator()==other.getNumerator());
   }
 
@@ -58,6 +60,14 @@ public class RationalNumber extends RealNumber {
     int gcd=gcd(getNumerator(),getDenominator());
     numerator=getNumerator()/gcd;
     denominator=getDenominator()/gcd;
+    if (denominator<0&&numerator>0){
+      numerator=numerator*-1;
+      denominator=denominator*-1;
+    }
+    if (denominator<0&&numerator<0){
+      numerator=numerator*-1;
+      denominator=denominator*-1;
+    }
   }
 
   public RationalNumber multiply(RationalNumber other){
@@ -77,6 +87,7 @@ public class RationalNumber extends RealNumber {
     int newnum=numerator*other.getDenominator()+other.getNumerator()*denominator;
     int newdeno=denominator*other.getDenominator();
     RationalNumber sum=new RationalNumber(newnum,newdeno);
+    sum.reduce();
     return sum;
   }
 
@@ -84,6 +95,7 @@ public class RationalNumber extends RealNumber {
     int newnum=numerator*other.getDenominator()-other.getNumerator()*denominator;
     int newdeno=denominator*other.getDenominator();
     RationalNumber diff=new RationalNumber(newnum,newdeno);
+    diff.reduce();
     return diff;
   }
 }
