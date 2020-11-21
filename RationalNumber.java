@@ -22,4 +22,11 @@ public class RationalNumber extends RealNumber {
   public int getDenominator(){
     return denominator;
   }
+
+  public RationalNumber reciprocal(){
+    nume2=denominator;
+    deno2=numerator;
+    RationalNumber reci=new RationalNumber(nume2,deno2);
+    return reci;
+  }
 }
