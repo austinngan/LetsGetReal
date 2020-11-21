@@ -12,9 +12,16 @@ public class RealNumber{
   public boolean equals(RealNumber other){
     double value1=getValue();
     double value2=other.getValue();
+    if(value1==0&&value2!=0){
+      return false;
+    }
+    if(value2==0&&value1!=0){
+      return false;
+    }
     if (value1/value2<=0.00001){
       return true;
     }
     return false;
   }
+
 }
