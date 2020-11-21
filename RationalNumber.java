@@ -53,4 +53,10 @@ public class RationalNumber extends RealNumber {
     }
     return a;
   }
+
+  private void reduce(){
+    int gcd=gcd(getNumerator(),getDenominator());
+    int newnum=getNumerator()/gcd;
+    int newden=getDenominator/gcd;
+  }
 }
