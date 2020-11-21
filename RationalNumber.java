@@ -24,13 +24,14 @@ public class RationalNumber extends RealNumber {
   }
 
   public RationalNumber reciprocal(){
-    nume2=denominator;
-    deno2=numerator;
+    int nume2=denominator;
+    int deno2=numerator;
     RationalNumber reci=new RationalNumber(nume2,deno2);
     return reci;
   }
 
   public boolean equals(RationalNumber other){
-    return (getDenominator()==other.getDenominator()&&getNumerator()==other.getNumerator())
+    return (getDenominator()==other.getDenominator()&&getNumerator()==other.getNumerator());
   }
+
 }
