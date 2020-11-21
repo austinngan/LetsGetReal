@@ -18,10 +18,14 @@ public class RealNumber{
     if(value2==0&&value1!=0){
       return false;
     }
-    if (value1/value2<=0.00001){
+    if (value1/value2<=0.00001||value2/value1<=0.00001){
       return true;
     }
     return false;
   }
-
+  public RealNumber add(RealNumber other){
+    double z=getValue()+other.getValue();
+    RealNumber sum=new RealNumber(z);
+    return sum;
+  }
 }
