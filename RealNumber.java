@@ -39,4 +39,10 @@ public class RealNumber{
     RealNumber prod=new RealNumber(z);
     return prod;
   }
+
+  public RealNumber divide(RealNumber other){
+    double z=getValue()/other.getValue();
+    RealNumber quot=new RealNumber(z);
+    return quot;
+  }
 }
