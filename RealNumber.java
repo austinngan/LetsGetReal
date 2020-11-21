@@ -16,16 +16,15 @@ public class RealNumber{
   public boolean equals(RealNumber other){
     double value1=getValue();
     double value2=other.getValue();
-    if(value1==0&&value2!=0){
-      return false;
+    if(value1==0){
+      if (value2==0){
+        return true;
+      }
+      else{
+        return false;
+      }
     }
-    if(value2==0&&value1!=0){
-      return false;
-    }
-    if (value1/value2<=0.00001||value2/value1<=0.00001){
-      return true;
-    }
-    return false;
+    return (Math.abs(value1-value2)/value1<0.00001);
   }
 
   public RealNumber add(RealNumber other){
@@ -45,4 +44,11 @@ public class RealNumber{
     RealNumber quot=new RealNumber(z);
     return quot;
   }
+
+  public RealNumber subtract(RealNumber other){
+    double z=getValue()-other.getValue();
+    RealNumber diff=new RealNumber(z);
+    return diff;
+  }
+
 }
