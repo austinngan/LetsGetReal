@@ -29,4 +29,8 @@ public class RationalNumber extends RealNumber {
     RationalNumber reci=new RationalNumber(nume2,deno2);
     return reci;
   }
+
+  public boolean equals(RationalNumber other){
+    return (getDenominator()==other.getDenominator()&&getNumerator()==other.getNumerator())
+  }
 }
