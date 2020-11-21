@@ -56,7 +56,15 @@ public class RationalNumber extends RealNumber {
 
   private void reduce(){
     int gcd=gcd(getNumerator(),getDenominator());
-    int newnum=getNumerator()/gcd;
-    int newden=getDenominator/gcd;
+    denominator=getNumerator()/gcd;
+    denominator=getDenominator()/gcd;
+  }
+
+  public RationalNumber multiply(RationalNumber other){
+    int newnum=getNumerator()*other.getNumerator();
+    int newdeno=getDenominator()*other.getDenominator();
+    RationalNumber prod=new RationalNumber(newnum,newdeno);
+    prod.reduce();
+    return prod;
   }
 }
