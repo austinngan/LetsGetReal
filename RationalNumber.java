@@ -72,4 +72,11 @@ public class RationalNumber extends RealNumber {
     other=other.reciprocal();
     return multiply(other);
   }
+
+  public RationalNumber add(RationalNumber other){
+    int newnum=numerator*other.getDenominator()+other.getNumerator()*denominator;
+    int newdeno=denominator*other.getDenominator();
+    RationalNumber sum=new RationalNumber(newnum,newdeno);
+    return sum;
+  }
 }
