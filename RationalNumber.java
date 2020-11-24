@@ -2,13 +2,13 @@ public class RationalNumber extends Number{
   private int numerator, denominator;
 
   public RationalNumber(int nume, int deno){
-    super(0.0);
     numerator=nume;
     denominator=deno;
     if (denominator==0){
       denominator=1;
       numerator=0;
     }
+    reduce();
   }
 
   public double getValue(){
@@ -48,12 +48,18 @@ public class RationalNumber extends Number{
   private static int gcd(int a, int b){
     int temp=0;
     int remainder=1;
+    if (a==0){
+      return 1;
+    }
+    if (a<0){
+      a=a*-1;
+    }
     if (a<b){
       temp=b;
       b=a;
       a=temp;
     }
-    while (remainder!=0){
+    while (remainder>0){
       remainder=a%b;
       a=b;
       b=remainder;
@@ -65,6 +71,10 @@ public class RationalNumber extends Number{
     int gcd=gcd(getNumerator(),getDenominator());
     numerator=getNumerator()/gcd;
     denominator=getDenominator()/gcd;
+    if (numerator==0||denominator==0){
+      numerator=0;
+      denominator=1;
+    }
     if (denominator<0&&numerator>0){
       numerator=numerator*-1;
       denominator=denominator*-1;
