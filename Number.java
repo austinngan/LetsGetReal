@@ -1,7 +1,15 @@
 public abstract class Number{
   public abstract double getValue();
 
-
+  public int compareTo(Number other){
+    if (getValue()>other.getValue()){
+      return 1;
+    }
+    if (equals(other)){
+      return 0;
+    }
+    return -1;
+  }
 
   public boolean equals(RealNumber other){
     double value1=getValue();
