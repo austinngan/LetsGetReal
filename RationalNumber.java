@@ -12,7 +12,7 @@ public class RationalNumber extends Number{
   }
 
   public double getValue(){
-    return (double) numerator/denominator;
+    return ((double)numerator/(double)denominator);
   }
 
   public int getNumerator(){
@@ -37,7 +37,7 @@ public class RationalNumber extends Number{
   }
 
   public String toString(){
-    if (denominator==0){
+    if (denominator==0||denominator==1){
       return (""+numerator);
     }
     else{
